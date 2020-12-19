@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Layout from "../components/Layout"
 import Banner from "../components/Banner"
 import About from "../components/Home/About"
@@ -11,9 +11,9 @@ export default ({ data }) => (
   <Layout>
     <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
       <Banner title="continue exploring" info="lorem ipsum dolor sit amet">
-        <Link className="btn-white" to="/tours">
+        <AniLink fade className="btn-white" to="/tours">
           explore tours
-        </Link>
+        </AniLink>
       </Banner>
     </StyledHero>
     <About />
