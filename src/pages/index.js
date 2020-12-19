@@ -21,7 +21,7 @@ export default ({ data }) => (
   </Layout>
 )
 
-export const query = graphql(`
+export const query = graphql`
   query {
     defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
@@ -31,4 +31,4 @@ export const query = graphql(`
       }
     }
   }
-`)
+`
