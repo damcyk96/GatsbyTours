@@ -8,7 +8,7 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const getImage = graphql`
   query {
-    file(relativePath: { eq: "deafaultBcg.jpeg" }) {
+    file(relativePath: { eq: "defaultBcg.jpeg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -22,13 +22,7 @@ const Tour = ({ tour }) => {
   const data = useStaticQuery(getImage)
   const img = data.file.childImageSharp.fluid
   const { name, price, country, days, slug, images } = tour
-
-  let mainImage
-  if (images) {
-    mainImage = images[0].fluid
-  } else {
-    mainImage = img
-  }
+  let mainImage = images ? images[0].fluid : img
 
   return (
     <article className={styles.tour}>
@@ -58,9 +52,9 @@ const Tour = ({ tour }) => {
 Tour.propTypes = {
   tour: PropTypes.shape({
     name: PropTypes.string.isRequired,
-    price: PropTypes.string.isRequired,
     country: PropTypes.string.isRequired,
-    days: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    days: PropTypes.number.isRequired,
     images: PropTypes.arrayOf(PropTypes.object).isRequired,
   }),
 }

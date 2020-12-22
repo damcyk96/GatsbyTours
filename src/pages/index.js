@@ -10,7 +10,7 @@ import FeaturedTours from "../components/Home/FeaturedTours"
 
 export default ({ data }) => (
   <Layout>
-    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+    <StyledHero home="true">
       <Banner title="continue exploring" info="lorem ipsum dolor sit amet">
         <AniLink fade className="btn-white" to="/tours">
           explore tours
