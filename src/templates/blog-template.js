@@ -6,8 +6,8 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 const Blog = ({ data }) => {
   const {
     title,
-    published,
-    text: { json },
+    published
+    // text: { json },
   } = data.post
 
   return (
@@ -31,9 +31,9 @@ export const query = graphql`
     post: contentfulPost(slug: { eq: $slug }) {
       title
       published(formatString: "MMMM Do, YYYY")
-      text {
-        json
-      }
+      # text {
+      #   json
+      # }
     }
   }
 `
