@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import styles from "../../css/items.module.css"
-import Tour from "../Tours/Tour"
+import Tour from "./Tour"
 import Title from "../Title"
+
 export default class TourList extends Component {
   state = {
     tours: [],

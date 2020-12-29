@@ -7,12 +7,14 @@ import Services from "../components/Home/Services"
 import StyledHero from "../components/StyledHero"
 import { graphql } from "gatsby"
 import FeaturedTours from "../components/Home/FeaturedTours"
-
 export default ({ data }) => (
   <Layout>
-    <StyledHero home="true">
-      <Banner title="continue exploring" info="lorem ipsum dolor sit amet">
-        <AniLink fade className="btn-white" to="/tours">
+    <StyledHero home="true" img={data.defaultBcg.childImageSharp.fluid}>
+      <Banner
+        title="continue exploring"
+        info=" Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, officiis."
+      >
+        <AniLink fade to="/tours" className="btn-white">
           explore tours
         </AniLink>
       </Banner>
@@ -22,7 +24,6 @@ export default ({ data }) => (
     <FeaturedTours />
   </Layout>
 )
-
 export const query = graphql`
   query {
     defaultBcg: file(relativePath: { eq: "defaultBcg.jpeg" }) {

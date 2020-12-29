@@ -5,8 +5,7 @@ import StyledHero from "../components/StyledHero"
 import styles from "../css/template.module.css"
 import Img from "gatsby-image"
 import { FaMoneyBillWave, FaMap } from "react-icons/fa"
-import Day from "../components/Home/SingleTour/Day"
-import Anilink from "gatsby-plugin-transition-link"
+import Day from "../components/SingleTour/Day"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 const Template = ({ data }) => {
   const {
@@ -50,8 +49,8 @@ const Template = ({ data }) => {
               {country}
             </p>
           </div>
-          <h4> starts on {start}</h4>
-          <h4> duration {days}</h4>
+          <h4>starts on : {start}</h4>
+          <h4>duration : {days} days</h4>
           <p className={styles.desc}>{description}</p>
           <h2>daily schedule</h2>
           <div className={styles.journey}>
@@ -60,7 +59,7 @@ const Template = ({ data }) => {
             })}
           </div>
           <AniLink fade to="/tours" className="btn-primary">
-            Back to tours
+            back to tours
           </AniLink>
         </div>
       </section>
